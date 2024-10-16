@@ -1,0 +1,46 @@
+<% @tweets.each do |tweet| %>
+    <div class="timeline">
+        <div class="card">
+            <h3>
+                <%= image_tag "User.png", size: "30x30" %>
+                <%= tweet.user.uid %>
+            </h3>
+            <h2><%= tweet.message %></h2>
+            <h4>
+                Like: <%= tweet.like_users.count %>
+            </h4>
+        </div>
+    </div>
+<%end %>
+
+<%= link_to "logout",top_logout_path %>
+
+<style>
+    .card{
+        padding: 5px;
+        margin:5px;
+        width:40vw;
+        border: solid 1px;
+        border-radius:10px;
+    }
+    .timeline{
+        /*text-align:center;*/
+        display:flex;
+        justify-content:center;
+    }
+    .card h2{
+        display:flex;
+        /*justify-content:;*/
+        padding-left:70px;
+    }
+    .card h3{
+        display:flex;
+        /*justify-content:center;*/
+        padding-left:15px;
+    }
+    .card h4{
+        display:flex;
+        justify-content:flex-end;
+        padding:0 10px 0 0;
+    }
+</style>
